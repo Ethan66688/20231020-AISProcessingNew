@@ -1,5 +1,6 @@
 #这个代码是提取每个港口作为上游港、下游港的时候连接的国家总数
 #注意一个国家只计一次
+#注意在执行此代码之前将yangshan和waigaoqiao替换成了shanghai，如果你已经完成了这部分并没有生成新文件，请注意修改read的文件名。
 
 import pandas as pd
 
