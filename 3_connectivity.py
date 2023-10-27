@@ -1,7 +1,9 @@
+#这个代码是提取每个港口作为上游港、下游港的时候连接的国家总数
+#注意一个国家只计一次
+
 import pandas as pd
 
-# 假设您已经将数据导入到一个名为df的DataFrame中
-df = pd.read_csv('modified_filtered_ship_routes_20km.csv')  # 如果数据存储在CSV文件中
+df = pd.read_csv('modified_filtered_ship_routes_20km.csv') 
 
 # 从出发港和到达港中提取所有唯一的港口
 all_ports = pd.concat([df['depart_port'], df['arrival_port']]).unique()
@@ -26,6 +28,6 @@ for port in all_ports:
 result_df = pd.DataFrame(list(port_to_countries.items()), columns=['Port', 'Number of Unique Countries'])
 
 # 将结果保存到CSV文件中
-result_df.to_csv('port_to_countries_count_20km新.csv', index=False)
+result_df.to_csv('port_to_countries_count_20km.csv', index=False)
 
 print("Results have been saved to 'port_to_countries_count.csv'.")
