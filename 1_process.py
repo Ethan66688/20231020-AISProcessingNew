@@ -1,16 +1,16 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Oct 25 16:56:13 2023
-
-@author: yuexiang
-"""
+#此代码为最关键的部分，即船舶停泊的判断
+#采用了haversine函数遍历处理，每种情况搜索的均为距离最近的港口
 
 import pandas as pd
 from haversine import haversine
 
+#首先要将原数据中速度大于1的部分进行清理
+ais_data_file = "container_ais_202001.csv"
+ais_data = pd.read_csv(ais_data_file, sep="|", header=0)
+ais_data = ais_data[ais_data['speed'] <= 1]
+ais_data.to_csv("processed_ais_data_202001.csv", sep=",", index=False)
 
-ais_data_file = "processed_ais_data.csv"
+ais_data_file = "processed_ais_data_202001.csv"
 ais_data = pd.read_csv(ais_data_file, sep=",", header=0)
 print(ais_data.columns)
 
@@ -48,4 +48,4 @@ port_visits = [filter_port_visits(row) for row in ais_data.itertuples(index=Fals
 
 # 保存港口访问数据
 port_visits_df = pd.DataFrame(port_visits, columns=["imo", "latitude","longitude","port_id", "port_name", "country_name", "timestamp", "port_latitude", "port_longitude","distance"])
-port_visits_df.to_csv("ship_port_visits_175km.csv", sep=",", index=False)
+port_visits_df.to_csv("ship_port_visits_20km.csv", sep=",", index=False)
