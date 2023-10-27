@@ -1,10 +1,5 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Oct 25 15:01:59 2023
-
-@author: yuexiang
-"""
+#这个代码是用来生成船舶航线的数据
+#注意这里是未经筛选的，存在许多重复情况，会在下一步中进行筛选
 
 import pandas as pd
 
@@ -42,4 +37,4 @@ for i in range(len(df) - 1):
 routes_df = pd.DataFrame(routes)
 
 # 保存结果
-routes_df.to_csv("ship_routes_175km.csv", index=False)
+routes_df.to_csv("ship_routes_20km.csv", index=False)
