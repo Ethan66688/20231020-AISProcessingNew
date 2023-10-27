@@ -1,15 +1,10 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Oct 25 15:04:28 2023
-
-@author: yuexiang
-"""
+#这个代码是用来计算每个港口的船舶访问量
+#逻辑较为简单
 
 import pandas as pd
 
 # 读取数据
-file_path = "filtered_ship_routes_175km.csv"
+file_path = "filtered_ship_routes_20km.csv"
 df = pd.read_csv(file_path)
 
 # 初始化一个字典来存放所有港口的次数
@@ -43,4 +38,4 @@ for imo in df['imo'].unique():
 
 # 将结果转换为DataFrame并保存为新的CSV文件
 result_df = pd.DataFrame(list(all_ports_counts.items()), columns=['Port', 'Count'])
-result_df.to_csv("port_counts_175km.csv", index=False)
+result_df.to_csv("port_counts_20km.csv", index=False)
