@@ -1,10 +1,5 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Oct 27 00:38:24 2023
-
-@author: yuexiang
-"""
+#这部分代码同样没做修改
+#如果需要使用，请记得修改你的文件路径
 
 import pandas as pd
 from sklearn.decomposition import PCA
