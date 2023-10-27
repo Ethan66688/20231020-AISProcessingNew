@@ -1,10 +1,5 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Oct 26 22:54:52 2023
-
-@author: yuexiang
-"""
+#这次在筛选数据时没有直接替换yangshan和waigaoqiao为shanghai。因此在处理后才补充了一个代码来替换
+#之后会合并到“filter”的代码中
 
 import pandas as pd
 
