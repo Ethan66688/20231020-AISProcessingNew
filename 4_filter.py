@@ -1,10 +1,5 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Oct 25 15:02:52 2023
-
-@author: yuexiang
-"""
+#这部分代码是为了删除所有上下游港口一致的数据
+#这样就避免了所有的交通拥堵造成的误判
 
 import pandas as pd
 
@@ -16,4 +11,4 @@ df = pd.read_csv(file_path)
 filtered_df = df[(df['depart_port'] != df['arrival_port']) & (df['imo'] != 0)]
 
 # 保存结果到新文件
-filtered_df.to_csv("filtered_ship_routes_175km.csv", index=False)
+filtered_df.to_csv("filtered_ship_routes_20km.csv", index=False)
