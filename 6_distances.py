@@ -1,10 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Oct 26 23:22:18 2023
-
-@author: yuexiang
-"""
 
 import pandas as pd
 import math
